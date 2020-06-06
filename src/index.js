@@ -2,13 +2,13 @@
 function createStore(candyReducer){
   let state;
   function dispatch(action){
-    state = candyReducer(state, action)
-    render()
+    state = candyReducer(state, action);
+    render();
   }
   function getState(){
-    return state
+    return state;
   }
-  return {dispatch, getState}
+  return {dispatch, getState};
 }
 
 function candyReducer(state = [], action) {
@@ -23,9 +23,9 @@ function candyReducer(state = [], action) {
 function render() {
   let container = document.getElementById('container');
   if(store.getState()) {
-    container.textContent = store.getState().join(' ')
+    container.textContent = store.getState().join(' ');
   } else {
-    throw new Error("the store's state has not been defined yet")
+    throw new Error("the store's state has not been defined yet");
   }
 };
 
